@@ -1,0 +1,14 @@
+#!/bin/bash
+typeset -i num=1
+until ! [ -e /Users/Sid/Desktop/pythonPR/nyumelee$num ];
+do
+num+=1
+done
+mkdir nyumelee$num
+curl -o /Users/Sid/Desktop/pythonPR/nyumelee$num/tournament$num.json -u halla:BvQ5HZNCquhDuKZN544EHh27LEhlBnP0Kwxwlomf https://api.challonge.com/v1/tournaments.json
+
+curl -o /Users/Sid/Desktop/pythonPR/nyumelee$num/participants$num.json -u halla:BvQ5HZNCquhDuKZN544EHh27LEhlBnP0Kwxwlomf https://api.challonge.com/v1/tournaments/nyumelee$num/participants.json
+
+curl -o /Users/Sid/Desktop/pythonPR/nyumelee$num/matches$num.json -u halla:BvQ5HZNCquhDuKZN544EHh27LEhlBnP0Kwxwlomf https://api.challonge.com/v1/tournaments/nyumelee$num/matches.json
+
+
